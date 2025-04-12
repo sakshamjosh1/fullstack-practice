@@ -11,14 +11,13 @@
             const inputElement = document.querySelector("input");
             const value = inputElement.value;
             const newDivElement = document.createElement("div");
-            newDivElement.setAttribute("id", ctr);
-            
+            newDivElement.setAttribute("id", "todo-"+ctr);
             newDivElement.innerHTML = `<div>`+value+`</div> <button onclick='deleteTodo(`+ctr+`)'> delete </button>`;
-            ctr+=1;
             document.querySelector("body").appendChild(newDivElement);
+            ctr+=1;
         }
         function deleteTodo(index){
-            const element = document.getElementById(index);
+            const element = document.getElementById("todo-"+index);
             element.parentNode.removeChild(element);
         }
     </script>
